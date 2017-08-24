@@ -42,7 +42,6 @@ label {
   margin-left: 20px;
 }
 .card {
-
 width: 400px;
 height: 200px;
 border: 1px solid black;
@@ -52,4 +51,7 @@ text-align: center;
 textarea{
   display: block;
   margin: 20px;
+}
+.delete {
+  margin-left: 15px;
 }
