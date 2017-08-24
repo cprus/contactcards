@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="cardstyle.css">
+    <meta charset="utf-8">
+    <title>My Contacts</title>
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type = "text/javascript">
+      $(document).ready(function() {
+
+        $('#submitbut').click(function() {
+          $('#right').append(
+            '<div class="card"><h1 class="cardname">' + $('input[name="first_name"]').val() + ' '
+            + $('input[name="last_name"]').val() + '</h1><p class="desc">' + $('#desctext').val() + '</p><button class="descbutton">Show/Hide Description</button><button class="delete">Delete Contact</button></div>'
+             );
+
+            return false
+          });
+
+          $(document).on('click', '.descbutton', function() {
+            $('.desc').toggle()
+          });
+          $(document).on('click', '.delete', function() {
+            $(this).parent().remove();
+          });
+        });
+
+    </script>
+  </head>
+  <body>
+  <div id="wrapper">
+      <h1 id="title">My Contacts</h1>
+    <div id="left">
+
+      <h2>Add a User</h2>
+
+      <form>
+        <label>First Name:</label><input type="text" name="first_name">
+        <label>Last Name:</label><input type="text" name="last_name">
+        <label>Description:</label><textarea id="desctext" name="description"></textarea>
+        <input id="submitbut" type="submit" vlaue="submit">
+      </form>
+    </div>
+
+    <div id="right"></div>
+
+
+
+  </div>
+  </body>
+</html>
